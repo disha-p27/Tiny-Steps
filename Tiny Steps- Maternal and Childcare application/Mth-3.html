@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Read More with Pop-Up</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('3.webp');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            width: 60%;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            text-align: center;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .container h1 {
+            color: #333;
+        }
+
+        .container p {
+            color: #666;
+        }
+
+        .container button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .container button:hover {
+            background-color: #0056b3;
+        }
+
+        .small-button {
+            padding: 5px 10px;
+            font-size: 12px;
+        }
+
+        .pop-up {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.5);
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        .pop-up-content {
+            background-color: #fff;
+            margin: 10% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 600px;
+            border-radius: 10px;
+            text-align: left;
+            animation: slideIn 0.5s ease-in-out;
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(-50px); }
+            to { transform: translateY(0); }
+        }
+
+        #close-btn {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        #close-btn:hover,
+        #close-btn:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .navbar {
+    height: 12%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 50px;
+    background: rgba(0, 0, 0, 0.7); 
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+nav {
+    flex: 1;
+    text-align: center; 
+}
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+nav ul li {
+    flex: 1;
+    text-align: center;
+}
+nav ul li a {
+    text-decoration: none;
+    color: rgb(207, 29, 29);
+    font-size: 13px;
+    transition: color 0.3s;
+    display: block;
+    padding: 20px 0;
+}
+nav ul li a:hover {
+    color: white; 
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>7 month - 9 months</h1>
+        <p id="short-text">
+            Month Seven of Pregnancy
+            At the end of the seventh month of pregnancy, fat begins to be deposited on your baby. Your baby is about 36 cm (14 inches) long and weighs from about 900 - 1800g (two to four pounds). Your baby's hearing is fully developed and they change position frequently and responds to stimuli, including sound, pain, and light.
+            
+            If born prematurely, your baby would probably survive after the seventh month of pregnancy.
+        </p>
+        <button id="read-more-btn">Read More</button>
+        <br><br>
+        <button class="small-button" onclick="window.location.href='anotherpage.html'">Vaccinationes done</button>
+    </div>
+
+    <div id="pop-up" class="pop-up">
+        <div class="pop-up-content">
+            <span id="close-btn">&times;</span>
+            <h2>Full Article</h2>
+            <p>Month Seven of Pregnancy
+                At the end of the seventh month of pregnancy, fat begins to be deposited on your baby. Your baby is about 36 cm (14 inches) long and weighs from about 900 - 1800g (two to four pounds). Your baby's hearing is fully developed and they change position frequently and responds to stimuli, including sound, pain, and light.
+                
+                If born prematurely, your baby would probably survive after the seventh month of pregnancy.
+                Month Eight of Pregnancy
+Your baby, who is now about 46cm (18 inches) long and weighs as much as about 2.27 kg (five pounds), will continue to mature and develop body fat reserves. You may notice that your baby is kicking more. Baby's brain is developing rapidly at this time, and they can see and hear. Most internal systems are well developed, but the lungs may still be immature.
+Month Nine of Pregnancy
+Towards the end of the third trimester, your baby continues to grow and mature. Their lungs are nearly fully developed. Your baby's reflexes are coordinated so they can blink, close the eyes, turn the head, grasp firmly, and respond to sounds, light, and touch.
+
+Your baby's position changes to prepare itself for labor and delivery. The baby drops down in your pelvis, and usually their head is facing down toward the birth canal.
+
+
+            </p>
+        </div>
+    </div>
+    <div class="navbar">
+        <nav>
+            <ul>
+                <li><a href="BAP Childcare.html">Childcare</a></li>
+                <li><a href="Mothercare.html">Mothercare</a></li>
+                <li><a href="Shopping.html">Shopping</a></li>
+            </ul>
+        </nav>
+    </div>
+</div>
+    <script>
+        document.getElementById('read-more-btn').addEventListener('click', function() {
+            document.getElementById('pop-up').style.display = 'block';
+        });
+
+        document.getElementById('close-btn').addEventListener('click', function() {
+            document.getElementById('pop-up').style.display = 'none';
+        });
+
+        window.addEventListener('click', function(event) {
+            if (event.target == document.getElementById('pop-up')) {
+                document.getElementById('pop-up').style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>

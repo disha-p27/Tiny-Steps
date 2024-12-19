@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Read More with Pop-Up</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('2.avif');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            width: 60%;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            text-align: center;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .container h1 {
+            color: #333;
+        }
+
+        .container p {
+            color: #666;
+        }
+
+        .container button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .container button:hover {
+            background-color: #0056b3;
+        }
+
+        .small-button {
+            padding: 5px 10px;
+            font-size: 12px;
+        }
+
+        .pop-up {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.5);
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        .pop-up-content {
+            background-color: #fff;
+            margin: 10% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 600px;
+            border-radius: 10px;
+            text-align: left;
+            animation: slideIn 0.5s ease-in-out;
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(-50px); }
+            to { transform: translateY(0); }
+        }
+
+        #close-btn {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        #close-btn:hover,
+        #close-btn:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .navbar {
+    height: 12%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 50px;
+    background: rgba(0, 0, 0, 0.7); 
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+nav {
+    flex: 1;
+    text-align: center; 
+}
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+nav ul li {
+    flex: 1;
+    text-align: center;
+}
+nav ul li a {
+    text-decoration: none;
+    color: rgb(207, 29, 29);
+    font-size: 13px;
+    transition: color 0.3s;
+    display: block;
+    padding: 20px 0;
+}
+nav ul li a:hover {
+    color: white; 
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>4 month - 6 months</h1>
+        <p id="short-text">
+            Month 4 of Pregnancy
+In the second trimester of pregnancy -- months 4, 5, and 6 -- your baby's fingers and toes are well-defined. Their eyelids, eyebrows, eyelashes, nails, and hair are formed, and teeth and bones are becoming denser. Your baby can even suck their thumb, yawn, stretch, and make faces.
+
+The nervous system is starting to function at this point in pregnancy. The reproductive organs and genitalia are now fully developed, and your health care provider can see on ultrasound if you are having a boy or a girl. Your baby's heartbeat may now be audible through an instrument called a Doppler.
+
+By the end of the fourth month, your baby is about 6 inches long and weighs about 4 ounces.
+        </p>
+        <button id="read-more-btn">Read More</button>
+        <br><br>
+        <button class="small-button" onclick="window.location.href='anotherpage.html'">Vaccinationes done</button>
+    </div>
+
+    <div id="pop-up" class="pop-up">
+        <div class="pop-up-content">
+            <span id="close-btn">&times;</span>
+            <h2>Full Article</h2>
+            <p>Month 4 of Pregnancy
+                In the second trimester of pregnancy -- months 4, 5, and 6 -- your baby's fingers and toes are well-defined. Their eyelids, eyebrows, eyelashes, nails, and hair are formed, and teeth and bones are becoming denser. Your baby can even suck their thumb, yawn, stretch, and make faces.
+                
+                The nervous system is starting to function at this point in pregnancy. The reproductive organs and genitalia are now fully developed, and your health care provider can see on ultrasound if you are having a boy or a girl. Your baby's heartbeat may now be audible through an instrument called a Doppler.
+                
+                By the end of the fourth month, your baby is about 6 inches long and weighs about 4 ounces.
+                Month 5 of Pregnancy
+Hair is beginning to grow on your baby's head, and lanugo, a soft fine hair, covers their shoulders, back, and temples. This hair protects your baby and is usually shed at the end of the baby's first week of life.
+
+Your baby's skin is covered with a whitish coating called vernix caseosa. This "cheesy" substance, thought to protect baby's skin from long exposure to the amniotic fluid, is shed just before birth.
+
+You may begin to feel your baby move, since they are developing muscles and exercising them. This first movement is called quickening.
+Month 6 of Pregnancy
+By the end of the sixth month, your baby is about 12 inches long and weighs about 2 pounds. their skin is reddish in color, wrinkled, and veins are visible through the baby's translucent skin. Baby's finger and toe prints are visible. The eyelids begin to part and the eyes open.
+
+Your baby may respond to sounds by moving or increasing the pulse, and you may notice jerking motions if baby hiccups.
+
+If born prematurely, your baby may survive after the 23rd week of pregnancy with intensive care.
+
+
+            </p>
+        </div>
+    </div>
+    <div class="navbar">
+        <nav>
+            <ul>
+                <li><a href="BAP Childcare.html">Childcare</a></li>
+                <li><a href="Mothercare.html">Mothercare</a></li>
+                <li><a href="Shopping.html">Shopping</a></li>
+            </ul>
+        </nav>
+    </div>
+</div>
+    <script>
+        document.getElementById('read-more-btn').addEventListener('click', function() {
+            document.getElementById('pop-up').style.display = 'block';
+        });
+
+        document.getElementById('close-btn').addEventListener('click', function() {
+            document.getElementById('pop-up').style.display = 'none';
+        });
+
+        window.addEventListener('click', function(event) {
+            if (event.target == document.getElementById('pop-up')) {
+                document.getElementById('pop-up').style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>

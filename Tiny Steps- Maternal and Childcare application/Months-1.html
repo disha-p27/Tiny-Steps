@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Read More with Pop-Up</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Read More with Pop-Up</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('one month.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            width: 60%;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            text-align: center;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .container h1 {
+            color: #333;
+        }
+
+        .container p {
+            color: #666;
+        }
+
+        .container button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .container button:hover {
+            background-color: #0056b3;
+        }
+
+        .small-button {
+            padding: 5px 10px;
+            font-size: 12px;
+        }
+
+        .pop-up {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.5);
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        .pop-up-content {
+            background-color: #fff;
+            margin: 10% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 600px;
+            border-radius: 10px;
+            text-align: left;
+            animation: slideIn 0.5s ease-in-out;
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(-50px); }
+            to { transform: translateY(0); }
+        }
+
+        #close-btn {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        #close-btn:hover,
+        #close-btn:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .navbar {
+            height: 12%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 50px;
+            background: rgba(0, 0, 0, 0.7);
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+
+        nav {
+            flex: 1;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+
+        nav ul li {
+            flex: 1;
+            text-align: center;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: rgb(207, 29, 29);
+            font-size: 13px;
+            transition: color 0.3s;
+            display: block;
+            padding: 20px 0;
+        }
+
+        nav ul li a:hover {
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                width: 80%;
+                padding: 10px;
+            }
+
+            .pop-up-content {
+                width: 90%;
+            }
+
+            nav ul {
+                flex-direction: column;
+            }
+
+            nav ul li {
+                flex: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>1 month - 6 months</h1>
+        <p id="short-text">Your 4-week-old baby's growth
+            Babies don’t grow at a steady rate, but rather in spurts. You may notice your little one clamoring for the breast or bottle more often during these stages (nursing moms call them cluster feedings), and this increase in demand is your little one’s way of fueling the incredible growth that his body is going through.
+        </p>
+        <button id="read-more-btn" aria-label="Read more about baby's growth">Read More</button>
+        <br><br>
+        <button class="small-button" onclick="window.location.href='templates/vaccine.html'" aria-label="Vaccination done">Vaccination Done</button>
+    </div>
+
+    <div id="pop-up" class="pop-up">
+        <div class="pop-up-content">
+            <span id="close-btn" aria-label="Close pop-up">&times;</span>
+            <h2>Full Article</h2>
+            <p>Your 4-week-old baby's growth
+                Babies don’t grow at a steady rate, but rather in spurts. You may notice your little one clamoring for the breast or bottle more often during these stages (nursing moms call them cluster feedings), and this increase in demand is your little one’s way of fueling the incredible growth that his body is going through.
+                
+                This extra demand may be draining on you, but baby growth spurts usually only last two to three days (though sometimes they can go for up to a week or more). A regular, more consistent pattern of feeding is around the corner.
+                
+                Your 2 months baby's growth
+                The average weight of a 2-month-old baby girl is 11.3 pounds; the average baby boy at 2 months weighs in at 12.3 pounds. Height averages are 22.5 inches for girls and 23 inches for boys.
+                
+                All that growth is fueled by the all-liquid diet your sweetie pie is still on — whether that’s formula or breast milk or a combo of both.
+                
+                Both formula-fed and breastfed babies at this age typically take 4 to 6 ounces every three to four hours. If you’re breastfeeding, you should expect to nurse around six to 10 times in a 24-hour period.
+                
+                Despite all that eating, your little one will start to have fewer bowel movements each day. In fact, don’t be alarmed if your baby goes a day or two without pooping. That’s because as babies get bigger, their bowels get bigger too, allowing waste to hang out longer before exiting. Is your baby still a prolific pooper? That’s also normal.
+                Does your baby seem to be gaining a little too much weight, or a little too little?
+
+                Before you jump to any conclusions about your little one’s rate of growth, chat with your doctor about whether she is actually overweight and not just baby-appropriately rounded … or actually underweight and not just genetically predestined to be on the slender side. 
+                
+                For an accurate assessment, talk to your pediatrician and take a look at your baby’s weight in relation to length on the height-weight chart.
+                A 4-month-old baby will still be on a liquid-only (or mostly liquid-only) diet. Some parents choose to begin solids at the 4-month mark, but check with your doctor first. Experts recommend that most babies wait until they’re 5 or 6 months old to start eating regular food. 
+
+                If you do decide to spoon up solids starting now, keep in mind that your baby doesn’t need more than a tablespoon of food (baby cereal, fruit, vegetables) once or twice a day at this point. Most of her calories should still be coming from breast milk or formula.
+                
+                6-month-old baby is ready for a healthy serving of solids (plus a whole lot of breast milk or formula) twice a day.
+                Who’s making great strides in the growth department? Your 6-month-old baby is!
+                
+                Thanks to a continuing diet of breast milk or formula (around 24 to 30 ounces a day) and solids (ranging from about 1 to 2 tablespoons to 3 to 9 tablespoons of cereal, proteins, fruit and vegetables each per day), your baby will weigh somewhere between 13 and 23 pounds and measure somewhere between 24 and 29 inches if he's a boy.
+                
+                If you have a little girl, she will hit the scales somewhere between 12 and 22 pounds and measure somewhere between 23 and 28 inches.
+            </p>
+        </div>
+    </div>
+    <div class="navbar">
+        <nav>
+            <ul>
+                <li><a href="BAP Childcare.html" aria-label="Go to Childcare section">Childcare</a></li>
+                <li><a href="Mothercare.html" aria-label="Go to Mothercare section">Mothercare</a></li>
+                <li><a href="Shopping.html" aria-label="Go to Shopping section">Shopping</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <script>
+        document.getElementById('read-more-btn').addEventListener('click', function() {
+            document.getElementById('pop-up').style.display = 'block';
+        });
+
+        document.getElementById('close-btn').addEventListener('click', function() {
+            document.getElementById('pop-up').style.display = 'none';
+        });
+
+        window.addEventListener('click', function(event) {
+            if (event.target == document.getElementById('pop-up')) {
+                document.getElementById('pop-up').style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>

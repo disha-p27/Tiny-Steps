@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Read More with Pop-Up</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('7 months.webp');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            width: 60%;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            text-align: center;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .container h1 {
+            color: #333;
+        }
+
+        .container p {
+            color: #666;
+        }
+
+        .container button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .container button:hover {
+            background-color: #0056b3;
+        }
+
+        .small-button {
+            padding: 5px 10px;
+            font-size: 12px;
+        }
+
+        .pop-up {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.5);
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        .pop-up-content {
+            background-color: #fff;
+            margin: 10% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 600px;
+            border-radius: 10px;
+            text-align: left;
+            animation: slideIn 0.5s ease-in-out;
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(-50px); }
+            to { transform: translateY(0); }
+        }
+
+        #close-btn {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        #close-btn:hover,
+        #close-btn:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .navbar {
+    height: 12%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 50px;
+    background: rgba(0, 0, 0, 0.7); 
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+nav {
+    flex: 1;
+    text-align: center; 
+}
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+nav ul li {
+    flex: 1;
+    text-align: center;
+}
+nav ul li a {
+    text-decoration: none;
+    color: rgb(207, 29, 29);
+    font-size: 13px;
+    transition: color 0.3s;
+    display: block;
+    padding: 20px 0;
+}
+nav ul li a:hover {
+    color: white;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>7 months-12 months</h1>
+        <p id="short-text">Your 7-week-old baby's growth
+            Your bouncing baby is slowly making her way up the growth charts, gaining about 1 to 1¼ pounds in weight and growing about ½ inch to ¾ inch in length this month.
+
+If you’ve been following your baby’s weight and length changes at each doctor visit and noting where the stats fall out on the standard growth chart, you’ll see a personal growth curve emerging — one that your little one will most likely continue to progress along throughout the first year.
+        </p>
+        <button id="read-more-btn">Read More</button>
+        <br><br>
+        <button class="small-button" onclick="window.location.href='templates\vaccine.html'">vaccination done</button>
+    </div>
+
+    <div id="pop-up" class="pop-up">
+        <div class="pop-up-content">
+            <span id="close-btn">&times;</span>
+            <h2>Full Article</h2>
+            <p>Your bouncing baby is slowly making her way up the growth charts, gaining about 1 to 1¼ pounds in weight and growing about ½ inch to ¾ inch in length this month.
+
+                If you’ve been following your baby’s weight and length changes at each doctor visit and noting where the stats fall out on the standard growth chart, you’ll see a personal growth curve emerging — one that your little one will most likely continue to progress along throughout the first year.
+                Your 8-month-old baby's growth
+Your 8-month-old baby girl will hit the scales somewhere between 13 and 23 pounds, while your baby boy will be weighing in at 14 to 25 pounds. On the length charts, look for your baby to fall somewhere between 25 and 30 inches.
+
+To keep up with that growth, baby will be interested in expanding his food repertoire and trading in that spoon for finger foods and self-feeding.
+Your 9-month-old baby's growth
+Your 9-month-old will probably gobble up around ¼ to ½ cup each of grains, fruit and veggies every day (or up to three times a day if your baby’s a big eater), ¼ to ½ cup of dairy foods a day, and ¼ to ½ cup of protein foods a day.
+
+    Is your baby not following these measurements precisely? Not to worry. As long as your little one is gaining weight and following her growth curve (again, it doesn’t have to be exact), there’s no need to get caught up in measurements. Allow your baby to eat to suit her own little appetite.
+    Your 10-month-old baby's growth
+With so much ground to cover, your energizer bunny is probably more interested in exploring than eating (or anything else) these days.
+
+But don’t worry if your formerly voracious eater suddenly turns up his nose at lunch or starts taking in less breast milk and formula. As his growth (finally) starts to slow, his appetite will decrease too.
+Your 11-month-old baby's growth
+As baby nears the end of the first year, boys will have grown to anywhere between about 17 to 27 pounds and a height of 27 to 32 inches. If your baby is a girl, expect a weight of 15 to 25 pounds and a height of 26 to 31 inches.
+
+By now, you should be taking the first steps toward weaning your little one off the bottle, aiming to be completely bottle-free just after the first birthday and no later than around 18 months unless your doctor tells you otherwise.
+Your 12-month-old baby's growth
+The average 12-month-old boy weighs 21 pounds, with a height of 30 inches. The average girl at a year old is 29½ inches tall with a weight just shy of 20 pounds. Just remember that your tot may weigh more or less than these averages, and that’s perfectly normal. 
+
+You and your doctor have been tracking your child's progress on those growth charts, and if the pediatrician says your tot is on the right curve, you don’t have to think twice about where he falls out.
+</p>
+        </div>
+    </div>
+    <div class="navbar">
+        <nav>
+            <ul>
+                <li><a href="BAP Childcare.html">Childcare</a></li>
+                <li><a href="Mothercare.html">Mothercare</a></li>
+                <li><a href="Shopping.html">Shopping</a></li>
+            </ul>
+        </nav>
+    </div>
+</div>
+    <script>
+        document.getElementById('read-more-btn').addEventListener('click', function() {
+            document.getElementById('pop-up').style.display = 'block';
+        });
+
+        document.getElementById('close-btn').addEventListener('click', function() {
+            document.getElementById('pop-up').style.display = 'none';
+        });
+
+        window.addEventListener('click', function(event) {
+            if (event.target == document.getElementById('pop-up')) {
+                document.getElementById('pop-up').style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>

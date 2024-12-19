@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vaccine Record Tracker</title>
+    <link rel="stylesheet" href="C:\Users\hjvri\OneDrive\Desktop\New folder\static\vaccine.css">
+</head>
+<body>
+    <h1>Vaccine Record Tracker</h1>
+    
+    <h2>Vaccine Details</h2>
+    <ul>
+        {% for vaccine in vaccines %}
+            <li>ID: {{ vaccine[0] }}, Name: {{ vaccine[1] }}, Date: {{ vaccine[2] }}, Dose: {{ vaccine[3] }}, Height: {{ vaccine[4] }}, Weight: {{ vaccine[5] }}, Aftereffects: {{ vaccine[6] }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Add Vaccine details</h2>
+    <form action="/add" method="post">
+        Name: <input type="text" name="name" required><br>
+        Date of dosage: <input type="date" name="date" required><br>  
+        Dose [1/2/..]: <input type="number" name="dose" required><br>
+        Height (in cms): <input type="number" step="0.1" name="height" required><br>  
+        Weight (in Kg): <input type="number" step="0.1" name="weight" required><br>  
+        After effects (Null if none): <input type="text" name="aftereffects"><br> 
+        <input type="submit" value="Add Vaccine details">
+    </form>
+
+    <h2>Update Vaccine details</h2>
+    <form action="/update" method="post">
+        ID: <input type="number" name="id" required><br>
+        Name: <input type="text" name="name"><br>
+        Date: <input type="date" name="date"><br>
+        Dose: <input type="number" name="dose"><br>
+        Height: <input type="number" step="0.1" name="height"><br>  
+        Weight: <input type="number" step="0.1" name="weight"><br>  
+        After effects: <input type="text" name="aftereffects"><br>
+        <input type="submit" value="Update Vaccine details">
+    </form>
+
+    <h2>Delete Vaccine</h2>
+    <form action="/delete" method="post">
+        ID: <input type="number" name="id" required><br>
+        <input type="submit" value="Delete Vaccine">
+    </form>
+
+    <h2>Search Vaccine</h2>
+    <form action="/search" method="get">
+        Query: <input type="text" name="query"><br>
+        <input type="submit" value="Search">
+    </form>
+
+    <ul id="search-results"></ul>
+    
+    <script>
+        document.querySelector('form[action="/search"]').addEventListener('submit', function(event) {
+            event.preventDefault();
+            fetch(`/search?query=${encodeURIComponent(document.querySelector('input[name="query"]').value)}`)
+                .then(response => response.json())
+                .then(data => {
+                    const resultsDiv = document.getElementById('search-results');
+                    resultsDiv.innerHTML = '';
+                    data.forEach(vaccine => {
+                        const listItem = document.createElement('li');
+                        listItem.textContent = `ID: ${vaccine[0]}, Name: ${vaccine[1]}, Date: ${vaccine[2]}, Dose: ${vaccine[3]}, Height: ${vaccine[4]}, Weight: ${vaccine[5]}, Aftereffects: ${vaccine[6]}`;
+                        resultsDiv.appendChild(listItem);
+                    });
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+        });
+    </script>
+</body>
+</html>
+

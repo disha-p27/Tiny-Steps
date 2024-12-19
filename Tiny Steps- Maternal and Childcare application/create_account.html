@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Create Account</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('create.jpg');
+            background-size: cover;
+            background-position: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .create-account-container {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        input[type="text"],
+        input[type="password"],
+        input[type="date"],
+        input[type="month"],
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin-top: 10px;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+<div class="create-account-container">
+    <h2>Create Account</h2>
+    <form id="create-account-form" action="login.html" method="POST">
+        <label for="birth_month_baby">Birth Month of Baby:</label>
+        <input type="month" id="birth_month_baby" name="birth_month_baby" ><br>
+
+        <label for="dob_mother">Date of Birth of Mother:</label>
+        <input type="date" id="dob_mother" name="dob_mother" required><br>
+
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" placeholder="Username" required><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" placeholder="Password" required><br>
+
+        <label for="name_mother">Mother's Name:</label>
+        <input type="text" id="name_mother" name="name_mother" placeholder="Mother's Name" required><br>
+
+        <label for="name_baby">Baby's Name:</label>
+        <input type="text" id="name_baby" name="name_baby" placeholder="Baby's Name" ><br>
+
+        <label for="months_since_birth">Months Since Birth:</label>
+        <input type="number" id="months_since_birth" name="months_since_birth" placeholder="Months Since Birth" ><br>
+
+        <button type="submit">Create Account</button>
+    </form>
+</div>
+<script>
+    document.getElementById("create-account-form").addEventListener("submit", function(event) {
+        alert("Account created successfully!");
+        console.log("Redirecting to login page...");
+        window.location.href = "login.html";
+        event.preventDefault();
+    });
+</script>
+</body>
+</html>
